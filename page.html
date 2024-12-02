@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="images" style="width: 100px; height: 100px" src="" alt="" />
+    <button onclick="prev()">prev</button>
+    <button onclick="next()">next</button>
+
+    <script>
+      let images = document.getElementById("images");
+      let i = 0;
+      let arr = [
+        "https://th.bing.com/th/id/R.32368a98943d5fbae2dd513b281f791d?rik=euDF6BIVXOMJ%2fQ&riu=http%3a%2f%2fwww.artisoo.com%2fimages%2fchinesepainting%2fcnag241455.jpg&ehk=nFQsILXvFG%2flYoovfroDajgSkLFTsI%2fuBbdpUWKvWPM%3d&risl=&pid=ImgRaw&r=0",
+        "https://i.pinimg.com/originals/bc/2a/66/bc2a668f55e4c15bd35619c6fa84a01d.png",
+        "https://i.pinimg.com/736x/4b/dd/91/4bdd91d1c17bb12659cf0badf747ed45.jpg",
+      ];
+      images.src = arr[i];
+
+      function prev() {
+        i -= 1;
+        if (i < 0) {
+          i = arr.length - 1;
+        }
+        images.src = arr[i];
+      }
+
+      function next() {
+        i += 1;
+        if (i >= arr.length) {
+          i = 0;
+        }
+        images.src = arr[i];
+      }
+    </script>
+  </body>
+</html>
